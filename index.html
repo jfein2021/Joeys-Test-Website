@@ -94,6 +94,21 @@
             flex-direction: row; /* ↔️ Arranges its children side-by-side */
             gap: 15px;           /* ↔️ Adds a clean 15px space horizontally between them */
         }
+
+        /* 📺 The Video Container */
+        .video-container {
+            width: 100%;            /* Fills up the full width of the phone screen */
+            max-width: 600px;       /* Prevents the video from becoming insanely giant on a desktop monitor */
+            margin: 20px auto;      /* Centers the video on the page and adds space above/below */
+        }
+
+        /* 🎥 The actual YouTube video inside it */
+        .video-container iframe {
+            width: 100%;            /* Forces the video to match the container's width */
+            aspect-ratio: 16 / 9;   /* Keeps the perfect widescreen shape so it doesn't get squished */
+            border: none;           /* Removes any default ugly borders */
+            border-radius: 8px;     /* Optional: Gives the video nice, modern rounded corners */
+        }
     </style>
 </head>
 
@@ -131,9 +146,8 @@
         </div>
     </div>
     
+    <div class="video-container">
     <iframe 
-        width="560" 
-        height="315" 
         src="https://www.youtube-nocookie.com/embed/UsUhfVFZurs?si=hoQrr55UXYZk-lju" 
         title="YouTube video player" 
         frameborder="0" 
@@ -141,6 +155,7 @@
         allowfullscreen
         referrerpolicy="strict-origin-when-cross-origin">
     </iframe>
+    </div>
 
     <button onclick="new Audio('Spiderman.mp3').play(); alert('With great power comes great responsibility')">
         Click for message from Spider-Man 
