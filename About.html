@@ -6,7 +6,7 @@
     <title>About Me</title>
     <style>
         body {
-            background-image: url('Background2.jpeg');
+            background-image: url('images/Background2.jpeg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -24,15 +24,111 @@
             padding: 10px 20px;
             cursor: pointer;
         }
+
+        /* 📸 The Grid Container */
+        .gallery-container {
+            display: grid;
+            /* This line automatically creates columns that shrink or grow, fitting as many as possible! */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;          /* Space between the photo cards */
+            width: 90%;         /* Width of the gallery on the page */
+            max-width: 1000px;  /* Keeps it from spreading too wide on massive screens */
+            margin: 20px auto;  /* Centers the gallery box */
+        }
+
+        /* 🖼️ Individual Photo Cards */
+        .gallery-item {
+            background-color: #222222; /* Dark card background */
+            border: 2px solid rgb(137, 113, 241);     /* Styled border matching Spidey colors! */
+            border-radius: 10px;       /* Rounded corners */
+            overflow: hidden;          /* Keeps images from spilling past the rounded corners */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Make images scale smoothly inside their cards */
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover; /* Crops the image perfectly to fill the box without squishing */
+            display: block;
+        }
+
+        /* Hover Zoom Effect */
+        .gallery-item:hover {
+            transform: translateY(-5px); /* Lift card slightly */
+            box-shadow: 0 10px 20px rgba(255, 0, 0, 0.4); /* Glow effect */
+        }
+
+        /* Text Captions below photos */
+        .caption {
+            padding: 10px;
+            margin: 0;
+            font-size: 14px;
+            color: #ffffff;
+        }
     </style>
 </head>
 <body>
     <h1>About Me</h1>
     <p>This is my brand new second page! Welcome!</p>   
-    <img src="IMG_6735.JPEG" alt="My Image" width="300">
     
     <a href="index.html">
         <button>Back to Home</button>
     </a>
+
+    <h2>My Photo Gallery</h2>
+
+<div class="gallery-container">
+    <div class="gallery-item">
+        <img src="images/B1.jpg" alt="My Band Performing">
+        <p class="caption">Performing live on stage!</p>
+    </div>
+    
+    <div class="gallery-item">
+        <img src="images/B2.jpeg" alt="My Guitar Collection">
+        <p class="caption">My favorite gear.</p>
+    </div>
+
+    <div class="gallery-item">
+        <img src="images/B3.jpg" alt="In the Recording Studio">
+        <p class="caption">Tracking some new tunes.</p>
+    </div>
+
+    <div class="gallery-item">
+        <img src="images/B4.jpg" alt="With Friends">
+        <p class="caption">Good times with great people.</p>
+    </div>
+
+      <div class="gallery-item">
+        <img src="images/B5.jpg" alt="My Guitar Collection">
+        <p class="caption">My favorite gear.</p>
+    </div>
+
+      <div class="gallery-item">
+        <img src="images/B6.jpg" alt="My Guitar Collection">
+        <p class="caption">My favorite gear.</p>
+    </div>
+
+      <div class="gallery-item">
+        <img src="images/C1.jpg" alt="My Guitar Collection">
+        <p class="caption">My favorite gear.</p>
+    </div>
+
+      <div class="gallery-item">
+        <img src="images/C2.jpeg" alt="My Guitar Collection">
+        <p class="caption">My favorite gear.</p>
+    </div>
+
+      <div class="gallery-item">
+        <img src="images/C3.jpg" alt="My Guitar Collection">
+        <p class="caption">My favorite gear.</p>
+    </div>
+
+      <div class="gallery-item">
+        <img src="images/C4.jpg" alt="My Guitar Collection">
+        <p class="caption">My favorite gear.</p>
+    </div>
+</div>
+
 </body>
 </html>
