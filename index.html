@@ -118,7 +118,11 @@
         referrerpolicy="strict-origin-when-cross-origin">
     </iframe>
 
-    <button onclick="newaudio('Spiderman.mp3').play(); alert('This is Joey\'s first popup!')">Click for a message from Spider-Man</button>
+    <button onclick="new Audio('Spiderman.mp3').play(); alert('With great power comes great responsibility')">
+        <img src="Peter.gif" alt="Spider-Man" width="50" height="50">
+    </button>
+
+<img onclick="new Audio('Spiderman.mp3').play()" src="Peter.gif" alt="Spider-Man" width="150" height="150">
 
     </div>
 
