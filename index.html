@@ -7,10 +7,34 @@
     <title>Document</title>
     
     <style>
+        button {
+            transition: all 0.2s ease-in-out; /* ⏱️ This makes the animation smooth instead of sudden */
+            cursor: pointer;
+        }
+
+        /* What happens when the mouse is hovering over the button */
+        button:hover {
+            transform: scale(1.08); /* 📈 Makes the button grow 8% larger */
+            box-shadow: 0px 0px 15px #4da6ff; /* 🌟 Adds a cool neon blue glow */
+            background-color: #4da6ff; /* Changes the background color */
+            color: black;
+        }
+        
         body {
-            background-color: #867a7a;
+            background-image: url('Background.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;           /* Keeps background in place when you scroll (very premium feel!) */
+            background-repeat: no-repeat;            /* Prevents the image from repeating like tiles */
+            background-color: #333333;               /* Fallback color in case the image fails to load */
+            
             color: #ffffff;
             font-family: times new roman;
+            display: flex;
+            flex-direction: column;  /* Stack everything vertically */
+            align-items: center;     /* Center everything horizontally */
+            text-align: center;      /* Center-align any plain text lines */
+            gap: 20px;               /* Optional: Adds a nice 20px space between all your page sections */
         }
        /* 1. The container that holds both the button and the content */
         .dropdown {
@@ -38,6 +62,9 @@
             box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
             border-radius: 5px;
             z-index: 1; /* Makes sure the menu floats on top of other content */
+            left: 50%;
+            transform: translateX(-50%);
+            top: 100%; /* Keeps it directly below the button */
         }
 
         /* 4. Style the links inside the dropdown */
@@ -91,7 +118,7 @@
     <button onclick="alert('This is Joey\'s first popup!')">Click here for popup!</button>
 
     <div class="button-row">
-    <label for="video">Choose a video:</label>
+    <label for="video">Choose a video (Sample dropdown, does nothing):</label>
     <select id="video" name="videos">
         <option value="video1">Day in the Life of a Rockstar</option>
         <option value="video2">Band Trip to NY/PA</option>
@@ -99,7 +126,7 @@
     </select> </div>
 
     <div class="dropdown">
-    <button class="dropbtn">Video Selection</button>
+    <button class="dropbtn">Video Selection (Real dropdown, leads to YouTube)</button>
         <div class="dropdown-content">
             <a href="https://youtu.be/SjyvX0WLzvk?si=brrRk_-nXHJm2b8p" target="_blank" rel="noopener">Day in the Life of a Rockstar</a>
             <a href="https://youtu.be/t4ueY7UG7Xg?si=TQdOM_ZI3bsrR8Lg" target="_blank" rel="noopener">Band Trip to NY/PA</a>
@@ -119,12 +146,15 @@
     </iframe>
 
     <button onclick="new Audio('Spiderman.mp3').play(); alert('With great power comes great responsibility')">
-        <img src="Peter.gif" alt="Spider-Man" width="50" height="50">
+        Click for message from Spider-Man 
+        <div>
+            <img src="Peter.gif" alt="Spider-Man" width="50" height="50">
+        </div>
     </button>
 
-<img onclick="new Audio('Spiderman.mp3').play()" src="Peter.gif" alt="Spider-Man" width="150" height="150">
-
     </div>
+   
+    <img onclick="new Audio('Spiderman.mp3').play()" src="Peter.gif" alt="Spider-Man" width="150" height="150">
 
 </body>
 </html>
